@@ -2,7 +2,7 @@ package com.example.test.request;
 
 import com.example.test.model.Car;
 
-import static com.example.test.controller.car.CarController.generateRandomString;
+import static com.example.test.helper.RandomHelper.generateRandomString;
 
 public class CreateCarRequest {
     private String name;
