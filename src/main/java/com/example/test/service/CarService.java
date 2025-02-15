@@ -4,11 +4,11 @@ import com.example.test.model.Car;
 import com.example.test.repository.CarRepository;
 import com.example.test.request.CreateCarRequest;
 import com.example.test.request.UpdateCarRequest;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
-
-import java.awt.print.Book;
 import java.util.Vector;
 
+@Service
 public class CarService {
     private final CarRepository carRepository;
 

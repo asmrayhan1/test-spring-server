@@ -1,8 +1,11 @@
 package com.example.test.repository;
 import com.example.test.model.Car;
+import org.springframework.stereotype.Repository;
+
 import java.util.Objects;
 import java.util.Vector;
 
+@Repository
 public class CarRepository {
     Vector<Car> myCars = new Vector<>();
 
