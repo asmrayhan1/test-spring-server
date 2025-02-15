@@ -45,6 +45,26 @@ public class CarController {
         }
     }
 
+    @PutMapping(value = "/update-car/{id}/{price}")
+    public String updateCar(@PathVariable String id, @PathVariable Double price) {
+        Car car = myCars.stream().filter(b -> b.getId().equals(id)).findFirst().orElse(null);
+        if (car == null) throw new AssertionError();
+        car.setPrice(price);
+        return "Car-updated";
+    }
+
+    @DeleteMapping(value = "/delete-car/{id}")
+    public String deleteCar(@PathVariable String id) {
+        System.out.println(id);
+        Car car = myCars.stream().filter(b -> b.getId().equals(id)).findFirst().orElse(null);
+        myCars.remove(car);
+        System.out.println(car);
+        for(int i=0;i<myCars.size();i++){
+            System.out.println(myCars.get(i));
+        }
+        return "Car-deleted";
+    }
+
     public static String generateRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder result = new StringBuilder();
